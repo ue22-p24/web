@@ -1,9 +1,7 @@
 ---
 celltoolbar: Slideshow
 jupytext:
-  cell_metadata_filter: all,-hidden,-heading_collapsed,-run_control,-trusted
   formats: md:myst
-  notebook_metadata_filter: all,-language_info,-toc,-jupytext.text_representation.jupytext_version,-jupytext.text_representation.format_version
   text_representation:
     extension: .md
     format_name: myst
@@ -95,7 +93,7 @@ for instance
 
 +++
 
-## excluded
+## the "backend" course
 
 this means that we will **not** address :
 
@@ -103,7 +101,7 @@ this means that we will **not** address :
   * like e.g. apache, nginx, django, REST apis, …
 * nor the network protocols involved  
   * like http(s), websockets, and similar
-* those will be touched on briefly later this year in a separate course
+* those will be touched on later this year in a separate course
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
