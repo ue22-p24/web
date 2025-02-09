@@ -72,14 +72,15 @@ in addition, be aware that, with respect to recent changes in the "third-party c
 
 `vite` gets installed through a tool named `npm`; in a nutshell, `npm` is Javascript's `pip`-like tool, it allows to install stuff from the Internet; so
 
-- for starters you need `npm`, and because it's written in JavaScript, you also need `node`
-- and then you need need to use `npm` to install `vite`
+- for starters we install `npm`, and because it's written in JavaScript, you also need `node` (and actually `npm` comes with `node`)
+- and then we use `npm` to install `vite`
 
 +++
 
-### install `node` and `npm`
+### installing `node` and `npm` 
 
-````{admonition} node and npm
+
+````{admonition} option 1: you already have a conda env
 :class: dropdown seealso
 
 super easy with `conda`  
@@ -87,7 +88,7 @@ make sure to first activate the right conda virtual env if you have any
 
 ```bash
 # this is true for all the commands in this section
-conda activate the-right-one
+conda activate my-web-conda
 ```
 
 ```bash
@@ -96,10 +97,37 @@ conda install -c conda-forge nodejs
 ```
 ````
 
-````{admonition} check it
-:class: dropdown important
++++
+
+
+````{admonition} option 2: you do not yet have a conda env:
+:class: dropdown seealso
+
+in this case you can install node **directly** in the conda env when you create it
+
 
 ```bash
+conda create -n my-web-conda python=3.13 nodejs=22
+```
+
+```bash
+# and then
+conda install -c conda-forge nodejs
+
+# after which you must activate, as always
+conda ativate my-web-conda
+```
+````
+
++++
+
+````{admonition} checking for node and npm
+:class: dropdown important
+
+regardless of the option you choose, remember to activate your conda env
+
+```bash
+conda activate my-web-conda
 node --version
 npm --version
 ```
@@ -107,7 +135,7 @@ npm --version
 
 +++
 
-### install `vite`
+### installing `vite`
 
 ````{admonition} vite
 :class: dropdown seealso
@@ -122,7 +150,7 @@ npm install vite
 
 ## how to use it ?
 
-with most of the activities / exercises contained in this course, you will just need to run
+with most of the activities / exercises contained in this course, you will just need to run (in the right folder of course)
 
 ```bash
 npx vite
@@ -134,7 +162,7 @@ which as part of its display will show a line like
   ➜  Local:   http://localhost:5174/
 ```
 
-and you now know which port number to use
+and now, you know which port number to use
 
 ### caveats
 
