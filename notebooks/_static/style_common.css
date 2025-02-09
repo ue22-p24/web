@@ -57,12 +57,12 @@
 
 
 /* execution output cells */
-div.cell div.cell_output .output pre {
+div.cell div.cell_output .output pre:not(.CodeMirror-line) {
     background-color: #f8fff8 !important;
     border: 0.3px solid blue !important;
 }
 
-html[data-theme='dark'] div.cell div.cell_output .output pre {
+html[data-theme='dark'] div.cell div.cell_output .output pre:not(.CodeMirror-line) {
     background-color: #064b06 !important;
 }
 

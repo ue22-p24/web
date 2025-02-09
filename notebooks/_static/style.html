@@ -39,12 +39,12 @@
 }
 
 
-div.cell div.cell_output .output pre {
+div.cell div.cell_output .output pre:not(.CodeMirror-line) {
     background-color: #f8fff8 !important;
     border: 0.3px solid blue !important;
 }
 
-html[data-theme='dark'] div.cell div.cell_output .output pre {
+html[data-theme='dark'] div.cell div.cell_output .output pre:not(.CodeMirror-line) {
     background-color: #064b06 !important;
 }
 
@@ -107,6 +107,7 @@ html[data-theme='dark'] {
 
 html[data-theme='dark'] .corrige {
     background-image: radial-gradient(circle at top left, #0e3852, #0c5517);
+}
 div.CodeMirror-lines div.CodeMirror-code pre.CodeMirror-line {
     border: unset;
     border-radius: unset;
