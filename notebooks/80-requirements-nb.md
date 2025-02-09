@@ -1,9 +1,7 @@
 ---
 celltoolbar: Slideshow
 jupytext:
-  cell_metadata_filter: all,-hidden,-heading_collapsed,-run_control,-trusted
   formats: md:myst
-  notebook_metadata_filter: all,-language_info,-toc,-jupytext.text_representation.jupytext_version,-jupytext.text_representation.format_version
   text_representation:
     extension: .md
     format_name: myst
@@ -28,8 +26,6 @@ Licence CC BY-NC-ND, Thierry Parmentelat
 ```{code-cell}
 tools = require('../js/tools'); tools.init()
 ```
-
-+++
 
 as usual you can enjoy this course with no local installation, and use the pure HTML version here  
 <https://ue22-p24-web.readthedocs.io/>

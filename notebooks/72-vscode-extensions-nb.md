@@ -1,9 +1,7 @@
 ---
 celltoolbar: Slideshow
 jupytext:
-  cell_metadata_filter: all,-hidden,-heading_collapsed,-run_control,-trusted
   formats: md:myst
-  notebook_metadata_filter: all,-language_info,-toc,-jupytext.text_representation.jupytext_version,-jupytext.text_representation.format_version
   text_representation:
     extension: .md
     format_name: myst
@@ -16,8 +14,6 @@ language_info:
 nbhosting:
   title: vscode extensions
 ---
-
-+++
 
 Licence CC BY-NC-ND, Thierry Parmentelat
 
@@ -33,8 +29,6 @@ in an opinionated order of usefulness
 ```{code-cell}
 tools = require('../js/tools'); tools.init()
 ```
-
-+++
 
 ##  live server
 

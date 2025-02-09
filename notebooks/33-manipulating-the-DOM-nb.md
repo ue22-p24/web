@@ -1,9 +1,7 @@
 ---
 celltoolbar: Slideshow
 jupytext:
-  cell_metadata_filter: all,-hidden,-heading_collapsed,-run_control,-trusted
   formats: md:myst
-  notebook_metadata_filter: all,-language_info,-toc,-jupytext.text_representation.jupytext_version,-jupytext.text_representation.format_version
   text_representation:
     extension: .md
     format_name: myst
@@ -115,7 +113,6 @@ you can find a cheatsheet that contains all this:
 
 tools.sample_from_stem("_static/cheatsheet", {sources_show: false})
 ```
-
 
 ````{admonition} practice
 :class: seealso

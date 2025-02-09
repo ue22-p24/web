@@ -1,9 +1,7 @@
 ---
 celltoolbar: Slideshow
 jupytext:
-  cell_metadata_filter: all,-hidden,-heading_collapsed,-run_control,-trusted
   formats: md:myst
-  notebook_metadata_filter: all,-language_info,-toc,-jupytext.text_representation.jupytext_version,-jupytext.text_representation.format_version
   text_representation:
     extension: .md
     format_name: myst
@@ -282,7 +280,7 @@ tools.sample_from_strings({html: box2_html, css: box2_css}, { start_with: 'css' 
 
 of course this can become quite tedious, so there also are so-called *shorthand properties*  
 that allow to set **several** atomic properties in one line  
-for dealing with paddings, margins, borders and fonts, among others  
+for dealing with paddings, margins, borders and fonts, among others
 
 +++
 
