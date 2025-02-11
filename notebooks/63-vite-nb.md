@@ -21,6 +21,8 @@ Licence CC BY-NC-ND, Thierry Parmentelat
 
 +++
 
+(label-vite)=
+
 # vite
 
 ```{code-cell}

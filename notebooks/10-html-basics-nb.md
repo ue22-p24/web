@@ -89,16 +89,24 @@ hence the use of the `file://` protocol
 
 +++
 
-```{admonition} first practice
-:class: seealso
+````{admonition} file: and CORS
+:class: danger dropdown
 
-for your first practice, you will save your code on your hard drive, and check the result locally <br>
-without the presence of a server, this is what the <code>file://</code> URLs are for
-```
+please note that, as time goes by, using `file:` URLs for development is becoming less and less workable; notably because of new policies related to Cross-Origin cookies; but let's not get ahead of ourselves, this will work just fine for now
 
-+++ {"tags": ["gridwidth-1-2"]}
+for more serious work, see [the page on setting up `vite` for a more realistic setup](label-vite)
+````
+
++++ {"tags": []}
 
 ## practice
+
+```{admonition} a git repo for your first practice ?
+:class: seealso
+
+follow your teacher's instructions as to where to create your practice folder  
+e.g. now might be a good time for creating a git repo so you can expose your work to them
+```
 
 * start from an empty folder
 * open vs-code and create a file named `hello.html`  
