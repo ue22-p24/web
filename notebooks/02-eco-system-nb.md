@@ -37,7 +37,7 @@ tools = require('../js/tools'); tools.init()
   * runs **frontend** code (even though that code is fetched at the backend)
 
 ```{image} media/client-server.svg
-:width: 270px
+:width: 600px
 :align: center
 ```
 

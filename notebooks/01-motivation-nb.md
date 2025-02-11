@@ -137,7 +137,7 @@ this means that we will **not** address :
 
 ## even wider than just the frontend
 
-* also be aware that JavaScript (node.js)
+* also be aware that JavaScript
   * that is primarily famous for powering frontends
   * is becoming more and more popular  as a traditional programming tool (see node.js)
   * so it can be, and actually is, more and more used for writing backends as well

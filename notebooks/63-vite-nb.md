@@ -99,7 +99,6 @@ conda install -c conda-forge nodejs
 
 +++
 
-
 ````{admonition} option 2: you do not yet have a conda env:
 :class: dropdown seealso
 
