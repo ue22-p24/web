@@ -2,3 +2,4 @@
 sphinx
 sphinx-rtd-theme
 jupyter-book
+pydata-sphinx-theme<0.16
