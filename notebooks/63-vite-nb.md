@@ -70,16 +70,13 @@ in addition, be aware that, with respect to recent changes in the "third-party c
 
 +++
 
+(label-install-nodejs)=
 ## basic install
 
 we're going to use vite through a tool named `npx`; this tool will let us run vite without the need for any prior installation
 
 however, we still need .. to install `npx` of course; fortunately it all boil down to installing `node.js`  
 just like a Python install comes with `pip`, `node` will come with `npm` and `npx`
-
-````{admonition} more details on npx
-
-can be found e.g. here: <https://dev.to/orlikova/understanding-npx-1m4>
 
 +++
 
@@ -136,6 +133,20 @@ conda activate my-web-conda
 node --version
 npx --version
 ```
+````
+
++++
+
+````{admonition} global install ?
+:class: dropdown warning
+
+note that you can also do a traditional install of `vite` like this:
+```bash
+npm install -g vite
+```
+in which case you can then directly run `vite` and no longer need to invoke `npx vite`
+
+more details on npx can be found e.g. here: <https://dev.to/orlikova/understanding-npx-1m4>
 ````
 
 +++
