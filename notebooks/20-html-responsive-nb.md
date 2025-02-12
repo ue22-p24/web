@@ -33,20 +33,15 @@ tools = require('../js/tools'); tools.init()
 * a responsive page **adapts** its layout to the **device size**
   * technically the visible area is called the **viewport**
 
-+++ {"tags": ["gridwidth-1-2"]}
++++ {"tags": []}
 
-this means for example that, on a wide viewport you would see this
+this means that for example, we want to obtain different layouts for the same content, depending on the screen size  
 
-```{image} media/responsive-wide.svg
+```{figure} media/responsive-wide-narrow.svg
 :align: center
-```
+:width: 600px
 
-+++ {"tags": ["gridwidth-1-2"]}
-
-while on a narrower viewport it would turn into this
-
-```{image} media/responsive-narrow.svg
-:align: center
+the same content seen through different viewport geometries
 ```
 
 +++
