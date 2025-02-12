@@ -72,14 +72,18 @@ in addition, be aware that, with respect to recent changes in the "third-party c
 
 ## basic install
 
-`vite` gets installed through a tool named `npm`; in a nutshell, `npm` is Javascript's `pip`-like tool, it allows to install stuff from the Internet; so
+we're going to use vite through a tool named `npx`; this tool will let us run vite without the need for any prior installation
 
-- for starters we install `npm`, and because it's written in JavaScript, you also need `node` (and actually `npm` comes with `node`)
-- and then we use `npm` to install `vite`
+however, we still need .. to install `npx` of course; fortunately it all boil down to installing `node.js`  
+just like a Python install comes with `pip`, `node` will come with `npm` and `npx`
+
+````{admonition} more details on npx
+
+can be found e.g. here: <https://dev.to/orlikova/understanding-npx-1m4>
 
 +++
 
-### installing `node` and `npm` 
+### installing `node` and `npx` 
 
 
 ````{admonition} option 1: you already have a conda env
@@ -130,21 +134,8 @@ regardless of the option you choose, remember to activate your conda env
 ```bash
 conda activate my-web-conda
 node --version
-npm --version
+npx --version
 ```
-````
-
-+++
-
-### installing `vite`
-
-````{admonition} vite
-:class: dropdown seealso
-
-```bash
-npm install vite
-```
-
 ````
 
 +++
@@ -160,20 +151,32 @@ npx vite
 which as part of its display will show a line like
 
 ```text
-  ➜  Local:   http://localhost:5174/
+  ➜  Local:   http://localhost:5173/
 ```
 
 and now, you know which port number to use
 
++++
+
 ### caveats
 
-- make sure **to mention a filename**  
-  i.e. if you just point your browser at `http://localhost:5174/` you won't get an answer  
-  **you need to say e.g. `http://localhost:5174/cv.html`**  
-  this is because the web server does not provide indexing (it does list the content of the folder)
+````{admonition} make sure **to mention a filename**
+:class: warning
 
-- also, as usual, **that terminal will become unusable**  
-  so if there's anything else you need a terminal for, just create another one
+i.e. if you just point your browser at  
+`http://localhost:5173/`  
+you **won't get an answer**
+
+so **you need to say e.g. `http://localhost:5173/cv.html`**  
+this is because the web server does not provide indexing (it does list the content of the folder)
+````
+
+````{admonition} your terminal will hang
+:class: warning
+
+also, as usual, **that terminal will become unusable**  
+so if there's anything else you need a terminal for, just create another one
+````
 
 +++
 
