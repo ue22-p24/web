@@ -21,7 +21,7 @@ Licence CC BY-NC-ND, Thierry Parmentelat
 
 +++
 
-(label-vite)=
+(label-surge)=
 
 # surge
 

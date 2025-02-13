@@ -23,7 +23,7 @@ Licence CC BY-NC-ND, Thierry Parmentelat
 
 (label-livepreview)=
 
-# livepreview
+# vscode livepreview
 
 ```{code-cell}
 tools = require('../js/tools'); tools.init()
@@ -32,6 +32,8 @@ tools = require('../js/tools'); tools.init()
 ## vscode's livepreview
 
 instead of switching constantly between vscode and your browser, you can use vs-code's livepreview extension
+
+to install it, search for `live preview` in vscode's extension pane; it's by MicroSoft and has about 8M downloads
 
 with that extension enabled, the workflow is **much faster**, as you can see here:
 
