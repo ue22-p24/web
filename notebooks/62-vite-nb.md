@@ -117,7 +117,7 @@ conda create -n my-web-conda python=3.13 nodejs=22
 conda install -c conda-forge nodejs
 
 # after which you must activate, as always
-conda ativate my-web-conda
+conda activate my-web-conda
 ```
 ````
 
