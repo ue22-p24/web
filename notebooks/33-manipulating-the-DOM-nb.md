@@ -54,6 +54,19 @@ tools = require('../js/tools'); tools.init()
 
 ## messing with an element
 
+* manage the class(es) of an element `element.classList`
+  ```
+  // add a class
+  element.classList.add("another-class")
+  // remove a class
+  element.classList.remove("another-class")
+  // remove or add
+  element.classList.toggle("some-class")
+  ```
+
+  ```{admonition} often the simplest way
+  instead of messing with individual properties, it is often simpler for the JS code to just add / remove classes in DOM elements, and let the CSS do the heavy lifting
+  ```
 * **read** a *computed* property (the one actually applied)
   ```
   window.getComputedStyle(element).backgroundColor
@@ -69,13 +82,6 @@ tools = require('../js/tools'); tools.init()
   and so, in line with the specificity rules, this will win over all other applicable settings
   ```
   element.style.backgroundColor = "rgb(10, 23, 255)"
-  ```
-* manage the class(es) of an element `element.classList`
-  ```
-  // add a class
-  element.classList.add("another-class")
-  // remove a class
-  element.classList.remove("another-class")
   ```
 * read the attribute of an element `element.getAttribute("someattr")`
   write it with `element.setAttribute("someattribute", somevalue)`

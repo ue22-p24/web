@@ -613,7 +613,7 @@ the syntax for JavaScript objects, as well as the *key/value* vocabulary, make t
 
 // how to concatenate objects
 
-/*let*/ options2 = {
+/*let*/ options3 = {
     margin_top: '30px',
     // that's how objects can be concatenated
     ...options,
@@ -632,25 +632,36 @@ copy.add = 'more'
 copy
 ```
 
-### accessing object keys & iterations
+### accessing object keys
 
 * you can access an attribute with either of these 2 forms
   * `object.first_name`
   * `object['first_name']`
 * the difference being that
-  * `object.first_name` takes the key name litterally
+  * `object.first_name` takes the key name literally
   * `object[expr]` **evaluates** `expr`, that should give a key name
 
+### iterations
+
+several options; probably the safest is
+
 ```{code-cell}
-// so we can use this to iterate over an object's contents
-for (let key in bond) {
+for (let [key, value] of Object.entries(bond)) {
+    console.log(`${key}: ${value}`)
+}
+```
+
+or to iterate over keys only
+
+```{code-cell}
+for (let key of Object.keys(bond)) {
     console.log(key, ':', bond[key])
 }
 ```
 
 +++ {"tags": ["level_advanced"]}
 
-#### building objects (advanced)
+### computing keys when building objects (advanced)
 
 and also, because there is no difference between
 
