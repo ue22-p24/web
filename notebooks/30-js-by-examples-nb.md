@@ -346,7 +346,11 @@ tools.sample_from_stem("../samples/30-js-intro-03-canvas",
 
 +++
 
-## event-driven
+## let's wrap it up
+
++++
+
+### event-driven
 
 * as opposed to more traditional languages, (think `main()` in C++ or Java,  or the entry module in Python)
 * browser-hosted code has **little control** on overall **order**
@@ -357,7 +361,7 @@ tools.sample_from_stem("../samples/30-js-intro-03-canvas",
 
 +++
 
-## callbacks
+### callbacks
 
 the historical paradigm for event-driven programming :
 
@@ -365,9 +369,6 @@ the historical paradigm for event-driven programming :
 * which is a **function** attached to some sort of **event**
 * and then of course the function gets **fired** when event **occurs**
 
-+++
-
-## callbacks - continued
 
 in our 3 examples, we have seen 4 callbacks already
 
@@ -378,7 +379,7 @@ in our 3 examples, we have seen 4 callbacks already
 
 +++
 
-## take home message
+### take home message
 
 as far as Web frontend, JavaScript :
 
@@ -389,7 +390,7 @@ as far as Web frontend, JavaScript :
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
-## see also: JS *vs* Python
+### see also: JS *vs* Python
 
 an interesting summary of the *similarities* and *differences* between *JavaScript* and *Python*  can be found here  
 <https://observablehq.com/@ballingt/javascript-for-python-programmers>

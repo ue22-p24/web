@@ -5,11 +5,18 @@ window.addEventListener('load', () => {
     const canvas = document.getElementById('shapes')
     const width = canvas.width
     const height = canvas.height
+    // required with canvas, to set e.g. colors and stuff
     const ctx = canvas.getContext('2d')
+
     // random255 is an arrow-function (like a lambda)
     const random255 = () => Math.floor(Math.random() * 255)
+    // it is as if we had written
+    // function random255() { return Math.floor(Math.random() * 255) }
+
+    // the following functions are arrow-functions too
     const randomColor = () =>
-         `rgb(${random255()} ${random255()} ${random255()} / 50%`
+      // we call it 3 times to create a random color
+      `rgb(${random255()} ${random255()} ${random255()} / 50%`
     const randomX = () => (Math.random() * width) - 50
     const randomY = () => (Math.random() * height) - 50
     const randomSide = () => (Math.random() * 100) + 20

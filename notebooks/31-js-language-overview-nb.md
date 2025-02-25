@@ -170,10 +170,13 @@ if the switch statement is new to you, please refer to this [full article on jav
 ### C-style `for` loop
 
 * C- or Java-like iteration loops are supported - although seldom needed
-* more on that about container types (arrays, …)
+
+````{admonition} seldom the right way
+this is **not the right way** to iterate over an array as we'll see later on
+````
 
 ```{code-cell}
-for (let i=0; i<3; i++) {
+for (let i=0; i<2; i++) {
     console.log(i)
 }
 ```
@@ -344,12 +347,13 @@ of course there is for example no `window` global in the context of the `node.js
 
 +++
 
-````{admonition} the kernel runs in nodejs, not the browser
+````{admonition} cannot inspect the browser globals from here
 :class: warning
 
-and it turns out, the notebook's JavaScript engine is an instance of `node.js`,  
+as it turns out, the notebook's JavaScript engine is an instance of `node.js`,  
 and so is not **browser-related**, so we could **not** inspect 
-the `document` or `window` variables here  
+the `document` or `window` variables from right here  
+
 but of course you can do so from the browser's console though
 ````
 
@@ -461,9 +465,9 @@ try {
 as of ES2015, the language has a proper `class` statement
 
 ````{admonition} no classes in JS before ES6
-:class: admonition-small
+:class: admonition-small dropdown
 
-older JavaScript did not have a builtin class mechanism, and used other - quite cryptic - ways to create pseudo-classes
+FYI, older JavaScript did not have a builtin class mechanism, and used other - quite cryptic - ways to create pseudo-classes
 ````
 
 ```{code-cell}
@@ -485,39 +489,45 @@ let vector = new Vector(10, 20)
 vector.display()
 ```
 
-````{admonition} cannot run this cell twice
-:class: warning
+````{admonition} cannot run this cell twice under Jupyter
+:class: warning dropdown
 
-here again, running this cell twice will cause an error; this is because like with `let`,  
-the language won't let you define the same `Vector` class twice in the same scope
+here again, when executing this under Jupyter, running this cell twice will cause an error  
+this is because, just like with `let`, the language **won't let** you define the same `Vector` class **twice** in the same scope
 ````
 
-+++
++++ {"tags": []}
 
 ### notes on classes
 
 **NOTICE** the following facts from that first class example :
 
 * `constructor` is very much alike `__init__` in Python
-* the **implicit** `this` variable refers to the current object
-* it is very much alike the traditional `self` argument in Python, except that it is **not mentioned** as a method parameter
+* the **implicit** `this` variable refers to the current object  
+  it is very much alike the traditional `self` argument in Python, except that it is **not mentioned** as a method parameter
 * objects get created with `new Vector()` - Java and C++ style  
   and **not** just plain Python-style `Vector()`
+* of course, inheritance is supported too; see `extends` and `super()` for details
+
+````{admonition} old-school classes
+:class: dropdown note
+
+you may come across older-school code that uses other techniques - typically involving a `prototype` thingy  
+just stay awy from that when you write new code,and just stick to the new idiom
+````
 
 +++ {"tags": ["level_intermediate"]}
 
-### properties (advanced)
+### get / set (advanced)
 
-* modern JavaScript has a native notion of properties
-* i.e. expose an apparently mundane access  
-  to an instance attribute
+* modern JavaScript has a native notion of what Python calls *properties*
+* i.e. expose an apparently mundane access to an instance attribute
 * through **getter** and **setter** functions
-* that intercept read/write attempts  
-  on the attribute
+* that intercept read/write attempts on the attribute
 
 +++ {"slideshow": {"slide_type": "slide"}, "tags": ["level_intermediate"]}
 
-### property example
+### get / set example
 
 ```{code-cell}
 :tags: [level_intermediate, gridwidth-1-2]
@@ -569,11 +579,3 @@ temp.kelvin = -10
 
 temp
 ```
-
-+++ {"tags": ["level_intermediate"]}
-
-### old-school classes
-
-* you may come across older-school code that uses other techniques
-* typically involving a `prototype` thingy
-* here again for new code you should stick to the new idiom
