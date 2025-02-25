@@ -1,7 +1,7 @@
 // copied from this page
 // https://cs.lmu.edu/~ray/notes/introjavascriptgraphics/
 
-window.addEventListener('load', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('shapes')
     const width = canvas.width
     const height = canvas.height

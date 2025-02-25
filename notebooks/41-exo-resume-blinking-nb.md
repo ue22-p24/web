@@ -93,8 +93,8 @@ the proper way is to attach a **callback** to the page **`load`** event
 
 ```javascript
 // attach an (anonymous) function to the 'load' event
-window.addEventListener(
-    'load',                   // the event name
+document.addEventListener(
+    'DOMContentLoaded',                   // the event name
     () => start('some-data')  // the callback: must be a function
 )
 ```

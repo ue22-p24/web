@@ -96,7 +96,7 @@ function create_spinning_wheel(svg) {
     return spin;
 }
 
-window.addEventListener(
-    "load",
+document.addEventListener(
+    "DOMContentLoaded",
     () => create_spinning_wheel(
         document.getElementById("spin")).init())

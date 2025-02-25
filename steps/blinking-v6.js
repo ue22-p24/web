@@ -18,7 +18,7 @@ function toggle_body_background() {
 // we've just moved about the code of `to_do_on_page_load`
 
 // we can now associate that callback to the 'load' event
-window.addEventListener("load", () => {
+document.addEventListener('DOMContentLoaded', () => {
     // useful to call it right away
     toggle_body_background()
     // and then every second

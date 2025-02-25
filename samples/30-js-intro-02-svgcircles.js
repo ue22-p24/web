@@ -47,7 +47,7 @@ class Board {
 }
 
 // initialize, but only once the page is loaded
-window.addEventListener('load',
+document.addEventListener('DOMContentLoaded',
   function () {
     // create instance
     let the_board = new Board(200, 200, 4)

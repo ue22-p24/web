@@ -141,8 +141,8 @@ function create_spinning_wheel(svg) {
     return spin;
 }
 
-window.addEventListener (
-    "load",
+document.addEventListener (
+    "DOMContentLoaded",
     () => {
         let spin = create_spinning_wheel(
             document.getElementById("spin"));

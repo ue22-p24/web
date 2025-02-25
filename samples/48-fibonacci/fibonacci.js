@@ -1,4 +1,4 @@
-window.addEventListener('load',
+document.addEventListener('DOMContentLoaded',
   () => {
     let golden = 0.5 * (1 + Math.sqrt(5.))
     let Wmax = 800

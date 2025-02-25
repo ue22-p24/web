@@ -4,7 +4,7 @@ var BOARD_W = 10;
 var BOARD_H = 10;
 var mines_count = 10;
 
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
 	const windlg = document.getElementById("windlg");
 	const restart_btn = document.getElementById("restart");
 	const reset_btn = document.getElementById("reset");

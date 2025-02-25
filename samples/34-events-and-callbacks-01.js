@@ -25,4 +25,4 @@ function onload(/*event*/) {
     .addEventListener("click", onclick)
 }
 
-window.addEventListener("load", onload)
+document.addEventListener('DOMContentLoaded', onload)

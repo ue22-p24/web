@@ -76,8 +76,8 @@ class XkcdBrowser {
     }
 }
 
-window.addEventListener(
-    'load',
+document.addEventListener(
+    'DOMContentLoaded',
     () => { new XkcdBrowser(
                 // how to find the 5 elements, from css selectors
                 "#xkcd>img",

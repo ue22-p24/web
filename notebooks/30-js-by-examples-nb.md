@@ -374,7 +374,7 @@ in our 3 examples, we have seen 4 callbacks already
 
 * ex.1 : `onclick="toggle()"`
 * ex.2 : `setTimeout(() => this.run(), 500)`
-* ex.2 : `window.addEventListener('load', ...)`
+* ex.2 : `document.addEventListener('DOMContentLoaded', ...)`
 * ex.3 : `canvas.addEventListener('click', drawShapes)`
 
 +++

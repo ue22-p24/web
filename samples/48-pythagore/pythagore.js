@@ -1,4 +1,4 @@
-window.addEventListener('load',
+document.addEventListener('DOMContentLoaded',
 
   () => {
     let [a, b] = [100, 300]

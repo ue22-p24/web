@@ -95,4 +95,4 @@ function Calculator() {
 
 // note that here again we call Calculator only once
 // so we could have inlined it right below instead
-window.addEventListener("load", Calculator);
+document.addEventListener('DOMContentLoaded', Calculator);

@@ -21,4 +21,4 @@ function run() {
     setTimeout(run, 1000)
 }
 
-window.addEventListener("load", run)
+document.addEventListener('DOMContentLoaded', run)

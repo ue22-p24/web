@@ -21,4 +21,4 @@ function to_do_on_page_load() {
 }
 
 // and now I can bind this callback to the 'load' event
-window.addEventListener("load", to_do_on_page_load)
+document.addEventListener('DOMContentLoaded', to_do_on_page_load)

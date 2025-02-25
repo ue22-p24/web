@@ -215,8 +215,8 @@ for this reason, JavaScript has 2 convenient ways to create anonymous functions:
 
 in this context, it is common to create functions **on the fly**, e.g.
 ```javascript
-window.addEventListener(
-    "load",
+document.addEventListener(
+    "DOMContentLoaded",
     // the expression on the following line
     // returns a function object
     () => console.log("page loaded")  

@@ -25,7 +25,7 @@ function check_win(color) {
 }
 
 
-window.addEventListener('load', function () {
+document.addEventListener('DOMContentLoaded', function () {
 	let current_color = 'red';
 	const windlg = document.getElementById("windlg");
 	const restart_btn = document.getElementById("restart");

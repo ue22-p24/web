@@ -1,8 +1,8 @@
 // a much more usual way to achieve the same
 // this time we use 0 global variable
 
-window.addEventListener(
-  "load",
+document.addEventListener(
+  "DOMContentLoaded",
   () => {
     console.log("page loaded, arming callbacks")
     // attach callbacks

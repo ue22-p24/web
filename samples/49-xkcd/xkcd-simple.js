@@ -8,8 +8,8 @@
 const XKCD = "https://xkcd.now.sh/?comic="
 
 
-window.addEventListener(
-    'load',
+document.addEventListener(
+    'DOMContentLoaded',
     () => {
         const submit = document.getElementById('submit')
         // keep track of where we are in the history
