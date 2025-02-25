@@ -62,3 +62,8 @@ code.code {
     margin: 4px 8px;
     padding: 4px 8px;
 }
+
+code {
+    background-color: antiquewhite;
+    padding: 0px 4px;
+}

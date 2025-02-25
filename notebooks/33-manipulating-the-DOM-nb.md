@@ -54,6 +54,8 @@ tools = require('../js/tools'); tools.init()
 
 ## messing with an element
 
+### classes
+
 * manage the class(es) of an element `element.classList`
   ```
   // add a class
@@ -67,6 +69,9 @@ tools = require('../js/tools'); tools.init()
   ```{admonition} often the simplest way
   instead of messing with individual properties, it is often simpler for the JS code to just add / remove classes in DOM elements, and let the CSS do the heavy lifting
   ```
+
+### properties
+
 * **read** a *computed* property (the one actually applied)
   ```
   window.getComputedStyle(element).backgroundColor
@@ -83,15 +88,17 @@ tools = require('../js/tools'); tools.init()
   ```
   element.style.backgroundColor = "rgb(10, 23, 255)"
   ```
-* read the attribute of an element `element.getAttribute("someattr")`
-  write it with `element.setAttribute("someattribute", somevalue)`
+
+### attributes
+
+* read the attribute of an element `element.getAttribute("someattr")`  
+  write it with `element.setAttribute("someattr", somevalue)`
   ````{admonition} what's an attribute again ?
   :class: tip admonition-small
 
   to set this attribute in HTML, one would have written `<div someattr="some-value">...</div>`  
   not to be confused with properties !
   ````
-* and much more...
 
 +++
 

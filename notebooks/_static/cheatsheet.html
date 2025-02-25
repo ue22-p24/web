@@ -30,12 +30,26 @@
 
 
     <div id="DOM-locating" class="group">
-      <div class="title">DOM locating elements</div>
+      <div class="title">DOM locating elements
+        <br>
+        <span class="normal"><a href="#iterating">see below for <b>how to iterate</b>
+          over multiple results</a>
+        </span>
+        <br>
+        <span class="normal">
+          all these methods can be called on any DOM element (i.e. instead of <code>document</code>), then the search happens only in that subtree
+          </span>
+
+      </div>
 
       <div class="bullets">
         <code class="code">elt = document.getElementById("foo")</code>
-        <span class="what">returns the DOM element whose <code>id</code> is
+        <span class="what">returns the <b>one</b> DOM element whose <code>id</code> is
           <code>foo</code>
+        </span>
+
+        <code class="code">elt = document.getElementsByClassName("foo")</code>
+        <span class="what">returns <b>all</b> the DOM element<b>s</b> of class <code>foo</code>
         </span>
 
         <code class="code">elt = document.querySelector(".myclass")</code>
@@ -44,8 +58,8 @@
         </span>
 
         <code class="code">elts = document.querySelectorAll(".myclass")</code>
-        <span class="what">returns all DOM elements that matches
-          <br> a CSS selector; see below for <b>how to iterate</b> over that.
+        <span class="what">returns <b>all</b> the DOM elements that match
+          <br> a CSS selector;
         </span>
       </div>
     </div>
@@ -55,6 +69,23 @@
       <div class="title">DOM changing / inspecting elements</div>
 
       <div class="bullets">
+        <code class="code">
+          elt.classList.add('my-class')
+        </code>
+        <span class="what">adds a class to an element</span>
+
+        <code class="code">
+          elt.classList.remove('my-class')
+        </code>
+        <span class="what">remove a class from an element</span>
+
+        <code class="code">
+          elt.classList.contains('my-class')
+        </code>
+        <span class="what">does the element have that class ?</span>
+
+        <div class="bullets-sep"></div>
+
         <code class="code">elt.style.display = "none"</code>
         <span class="what">change property <code>display</code>
           on <code>elt</code>
@@ -76,26 +107,13 @@
 
         <div class="bullets-sep"></div>
 
-        <code class="code">
-          elt.classList.add('my-class')
-        </code>
-        <span class="what">adds a class to an element</span>
-
-        <code class="code">
-          elt.classList.remove('my-class')
-        </code>
-        <span class="what">remove a class from an element</span>
-
-        <code class="code">
-          elt.classList.contains('my-class')
-        </code>
-        <span class="what">does the element have that class ?</span>
-
-        <div class="bullets-sep"></div>
-
         <code class="code">elt.textContent = "text"</code>
-        <span class="what">change the text inside a HTML element
-          <br> see also <code>.innerHTML</code> to graft a whole tree instead
+        <span class="what">change the text inside an HTML element
+        </span>
+        <code class="code">elt.innerHTML = 
+          "&lt;some&gt;&lt;html&gt;&lt;/html&gt;&lt;/some&gt;"
+        </code>
+        <span class="what">graft a whole tree inside an HTML element
         </span>
       </div>
     </div>
@@ -152,8 +170,7 @@ my_circle = document.createElementNS(
 
       <!-- <div class="bullets"> -->
         <code class="code">
-          <pre>while (node.firstChild) node.removeChild(node.lastChild)
-          </pre>
+          <pre>while (node.firstChild) node.removeChild(node.lastChild)</pre>
         </code>
         <span class="what">remove all children of <code>node</code></span>
       </div>
@@ -161,7 +178,7 @@ my_circle = document.createElementNS(
     </div>
 
     <div id="iterating" class="group">
-      <div class="title">DOM iterating over elements</div>
+      <div class="title"><a name="iterating">DOM iterating over elements</a></div>
 
       <div class="bullets">
         <code class="code">for (let child of elt.children)</code>
@@ -184,10 +201,16 @@ my_circle = document.createElementNS(
         <br>
         <span class="normal">
           <code>a_function</code> denotes a function object</code></span>
+        <br>
+        <span class="normal">
+          <a href="https://javascript.info/introduction-browser-events" target="_blank">
+            for a list of common events, see this link
+          </a>
+        </span>
       </div>
 
       <div class="bullets">
-        <code class="code">window.addEventListener("load", a_function)</code>
+        <code class="code">document.addEventListener("DOMContentLoaded", a_function)</code>
         <span class="what">registers <code>a_function()</code> to be triggered when document is fully loaded</span>
 
         <code class="code">elt.addEventListener("click", a_function)</code>
