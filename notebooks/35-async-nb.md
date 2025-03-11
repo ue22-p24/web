@@ -61,8 +61,8 @@ try {
 * at any given time, your browser does **several things** in parallel, typically
   * monitor and reacts to user inputs (mouse & keyboard)
   * network activity (during page loading, but also when issuing API calls,...)
-* and so there is a need for supporting **parallelism**
-* and ideally in a way that makes code better (as in more legible)
+* and so there is a crucial need for supporting **parallelism**
+* and ideally in a way that makes code better (as in more legible)  
   (remember the best measurement of code quality is expressed in wtf/mn ;)
 
   ```{image} media/wtf-per-minute.png
@@ -107,13 +107,13 @@ typically, the page sends back API calls to its server over HTTPS
 so far we have seen one tool to deal with concurrency: *callbacks*  
 however the code can quickly become the *callback hell* by cascading callbacks  
 * which does not scale very well, because an essentially **sequential** business ends up creating a **deeply nested** program structure  
-* (and it gets even worse if any kind of logic is involved)
 
 ```{image} media/callback-hell.png
 :align: center
 :width: 450px
 ```
 
+* (and it gets even worse if any kind of logic is involved)
 
 ````{admonition} we have seen an example already
 :class: smaller
@@ -138,11 +138,7 @@ for instance, the same technique can be used as-is to send API calls
 
 to achieve this we have a builtin function called **`fetch()`**, that **returns a promise** object
 
-```{code-cell}
----
-slideshow:
-  slide_type: ''
----
+```js
 // let us start with defining a few URLs
 
 // NOTE that they do NOT return HTML, it's actually PLAIN TEXT
@@ -165,11 +161,7 @@ URL_broken = 'http://some-invalid/web/site'
 
 that done, we can fetch one URL (the small one for starters) with this code:
 
-```{code-cell}
----
-slideshow:
-  slide_type: ''
----
+```js
 // fetching a URL would typically be done like this
 
 fetch(URL_small)
@@ -196,7 +188,7 @@ run the following code, and observe that:
 * the http request is sort of "running on its own"
 * during all the time it takes to fetch the data, we can still run code !
 
-```{code-cell}
+```js
 // again with a larger file
 // observe how the network activity happens "in the background"
 
@@ -240,7 +232,7 @@ where
 * `function_ko` is triggered otherwise - note that this *second argument is optional*
 * `function_ok` is a function that consumes the output of the promise (once it is complete)  
   and **produces** (returns) the **output of the `.then()` call**
-* the `.then()` expression also returns .. a promise
+* so in other words, the `.then()` expression also returns .. a promise
   whose result is the result of `function_ok`
 ````
 
@@ -313,11 +305,7 @@ Promise.resolve(5)
 
 let us now rewrite our code **into a proper function**, so we can use it on any URL
 
-```{code-cell}
----
-slideshow:
-  slide_type: ''
----
+```js
 // for convenience, just in case
 
 URL_small = 'https://www.ebi.ac.uk/ena/browser/api/embl/AE000789?download=true'
@@ -329,18 +317,13 @@ URL_broken = 'http://some-invalid/web/site'
 
 ### without error management
 
-in this first iteration, we do not handle errors
+in this first iteration, we **do not handle errors**  
+for the sake of simplicity, we just display:
+- the HTTP return code (digression: google for 'http return codes')
+- the size of the response payload
+- and we return the actual body
 
-```{code-cell}
----
-slideshow:
-  slide_type: ''
----
-// first iteration: we display
-// - the HTTP return code (digression: google for 'http return codes')
-// - the size of the response payload
-// and we return the actual body
-
+```js
 /* const */ get_url1 = (url) => {
     // hope for the best (no error handling)
     let promise = fetch(url)
@@ -360,12 +343,10 @@ slideshow:
 }
 ```
 
-```{code-cell}
-// and here is how we could use it
+and here is how we could use it  
+since our function returns a promise, we use it with `.then()`, just like we did with `fetch()`
 
-// since our function returns a promise
-// we use it with .then(), just like we did with fetch()
-
+```js
 // let us display the first 20 characters in the file
 get_url1(URL_small)
     .then(text => console.log(`first 20 characters >${text.slice(0, 20)}<...`))
@@ -377,12 +358,9 @@ get_url1(URL_small)
 let us stress again that the static HTML version of this notebook does not tell the whole story, make sure to run the code in your browser console
 ````
 
-```{code-cell}
-:tags: [raises-exception]
+but when called on a broken URL, this code raises an exception:
 
-// but when called on a broken URL 
-// this code raises an exception
-
+```js
 get_url1(URL_broken)
 ```
 
@@ -409,12 +387,10 @@ this means that `catch(failureCallback)` is short for `then(null, failureCallbac
 
 ### with error management
 
-so we can come up with a second iteration, where we take care of erors
+so we can come up with a second iteration, where we **take care of errors**  
+to this end, we add a `catch()` at the end
 
 ```js
-// let us add error management in our get_url function
-// to this end, we add a catch() at the end
-
 /* const */ get_url2 = (url) => {
     // let's get rid of the promise variable, not needed
     return fetch(url)
@@ -426,10 +402,10 @@ so we can come up with a second iteration, where we take care of erors
             console.log(`actual page contains ${text.length} bytes`)
             return text
         })
-        
+
         // this catch will deal with any error in the upstream chain
         .catch(err => console.log(`OOPS with ${url}`, err))
-        
+
         // just to show that the exception was properly handled
         .then((text) => {
             console.log("the show must go on")
@@ -453,7 +429,7 @@ so we can come up with a second iteration, where we take care of erors
 // we just receive a void result from get_url2 in that case
 
 get_url2(URL_small)
-    .then(text => { 
+    .then(text => {
         if (text)
             console.log(`first 20 characters >${text.slice(0, 20)}<...`)
     })
@@ -506,7 +482,7 @@ however the syntax is still a little awkward, and so in order to still improve r
 
 ### `async` functions
 
-with `async` we can create a function that returns a `Promise` by default  
+with `async` we can create a function that **returns a `Promise` by default**  
 moreover, all functions that return a `Promise`, including `.fetch()`, are called asynchronous functions
 
 +++
@@ -527,7 +503,7 @@ for convenience though, it is more and more also supported at the interpreter to
 
 let us see how we could take advantage of these new features to rewrite `get_url()`
 
-```{code-cell}
+```js
 //                  ↓↓↓↓↓
 /*const*/ get_url = async (url) => {
     try {
@@ -550,14 +526,13 @@ let us see how we could take advantage of these new features to rewrite `get_url
 * each time an asynchronous function is called, it is `await`*ed*; which means we wait for the promise to complete
 * this time, error management can be done through a regular `try/catch` instruction
 
-and as a result, the code pretty much looks like exactly what we would have written in a synchronous world, with the extra benefit that it is actually running asynchronously !
+and as a result, the code pretty much looks exactly like what we would have written in a synchronous world,
+with the extra benefit that it is actually running asynchronously !
 ````
 
-```{code-cell}
-:tags: [raises-exception]
+and here is how we would use this code
 
-// and here is how we would use this code
-
+```js
 /* const */ text = await get_url(URL_small)
 console.log(`first 20 characters >${text.slice(0, 20)}<...`)
 ```

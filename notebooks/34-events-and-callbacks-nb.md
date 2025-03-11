@@ -176,11 +176,13 @@ for more details and a more exhaustive list of available events, see [this secti
 you can create your own event by code, e.g. :
 
 ```javascript
+const foo = () => console.log("foo ! ")
 const event = new Event('myevent')
-// Listen for the event.
-elem.addEventListener('myevent', foo, false)
+// Listen for the event - on any element
+document.body.addEventListener('myevent', foo, false)
+
 // Dispatch the event.
-elem.dispatchEvent(event)
+document.body.dispatchEvent(event)
 ```
 
 +++ {"slideshow": {"slide_type": "slide"}}
@@ -258,14 +260,21 @@ the remainder of this notebook is for advanced readers
 * it is safe to use lexically-bound variables inside the callback
 * see the `context` variable in the example below
 
+````{admonition} safe if you use let or const
+:class: admonition-small warning
+
+we say it's safe, and indeed it is, but **only if you use `let` or `const`**  
+declaring a variable with `var`, or even worse, not declaring it at all, will **not work** as you expect
+````
+
 ````{admonition} use your browser console
 :class: error
 
-the behaviour might be unexpected as we're moving outside of the notebook's comfort zone here  
+we don't run this code here, as we're moving outside of the notebook's comfort zone with this code  
 feel free to cut and paste the code into your web browser's console
 ````
 
-```{code-cell}
+```js
 // here the 'context' variable is not visible
 
 {  // <- this is the block where 'context' is visible
@@ -292,19 +301,7 @@ try {
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
-### closures - continued
-
-```{code-cell}
-:tags: [gridwidth-1-2]
-
-{
-  let context = {a:1, b:2};
-  setTimeout(() => console.log("in callback", context), 1000)
-  console.log("armed");
-}
-```
-
-+++ {"tags": ["gridwidth-1-2"]}
+### takeaway
 
 * `context` is created in a block
 * that is **long gone** at the time the callback triggers
@@ -315,21 +312,18 @@ try {
 
 ## `let` *vs* `var`
 
-+++
+### a broken example
 
-* take home message is: **never use `var` declarations**
-* it is old-fashioned and **badly broken**
-* see below
-  * example with `var` in effect creates a global `i`
-  * while the one with `let` behaves as expected
+* an example with `var` in effect creates a global `i`
+* while the one with `let` behaves as expected
 
-```{code-cell}
-:tags: [gridwidth-1-2]
+```js
+// again you need to run this in the browser console
 
 function ko() {
   // DO NOT USE var IN YOUR CODE !
   for (var i=1; i<=3; i++) {
-     setTimeout(() => console.log("ko", i),
+     setTimeout(() => console.log("ko, i =", i),
                 100*i)
     }
 }
@@ -337,13 +331,11 @@ function ko() {
 ko()
 ```
 
-```{code-cell}
-:tags: [gridwidth-1-2]
-
+```js
 function ok() {
   // use let instead
   for (let i=1; i<=3; i++) {
-     setTimeout(() => console.log("ok", i),
+     setTimeout(() => console.log("ok, i =", i),
                 100*i)
     }
 }
@@ -351,6 +343,10 @@ function ok() {
 ok()
 ```
 
+### takeaway
+
+* take home message is: **never use `var` declarations**
+* it is old-fashioned and **badly broken**
 +++ {"slideshow": {"slide_type": "slide"}}
 
 ## see also
