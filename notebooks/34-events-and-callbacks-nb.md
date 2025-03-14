@@ -169,6 +169,15 @@ setInterval(foo, 3000) // call foo every 3000 ms
 for more details and a more exhaustive list of available events, see [this section in javascript.info](https://javascript.info/event-details)
 ````
 
+````{admonition} requestIdleCallback
+:class: dropdown admonition-smaller
+
+for the geeks:
+there is also a `requestIdleCallback` that is used to schedule a function to run **when the browser is idle**  
+so if you have a big chunk of code to run, you can use this to avoid blocking the UI  
+you will have to explicity split your code into chunks, though
+````
+
 +++ {"slideshow": {"slide_type": "slide"}}
 
 ### code-generated events
