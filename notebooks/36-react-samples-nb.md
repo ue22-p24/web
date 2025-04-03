@@ -349,12 +349,20 @@ the new thing here is the use of SASS instead of CSS
 CSS is sometimes considered tedious and boring; so there are a few alternatives
 around, here we've picked SASS - see <https://sass-lang.com/guide> for more
 details  
-one visible difference is that there's no `{` or `}` or `;` like with Python, it's the indentation that is meaningful  
+one visible difference is that there's no `{` or `}` or `;` like with Python,
+it's the indentation that is meaningful  
 SASS has been popular for a long time as it supported variables and nesting,
 although these are now native in CSS
 
 anyway, the point here is that can easily use alternative / higher-level tools
 within the context of a React app.
+
++++
+
+#### inline components
+
+one other thing to notice is, this app does not have a `components/` folder;  
+it does use components though; search for example for `CalcButton` in `App.js` to see how it's done
 
 +++
 
