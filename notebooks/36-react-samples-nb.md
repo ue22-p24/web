@@ -202,6 +202,7 @@ You should notice at least things like
   // some sort of mix between JS and HTML
   return (
     <div class="toplevel">
+      <img src={logo} className="App-logo" alt="logo" />
       <Counter text="temperature" />
       <Counter text="pressure"  />
     </div>
