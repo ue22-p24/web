@@ -238,6 +238,19 @@ You should notice at least things like
   when mentioned between `{}`, like e.g. this line above  
   `<span>{text} ({counter})</span>`
 
+```{admonition} summary of some templating syntaxes
+:class: tip dropdown small
+
+as a side note, this resonates with quite a few tools that have to do with some sort of templating, that we've seen so far, let us summarize them
+
+| templating engine | syntax |
+|------------------: |--------|
+| Python f-strings | `f"hello {name}"` |
+| JS backticks | `` `hello ${name}` `` |
+| Jinja2           | `{{ name }}` |
+| JSX              | `{name}` |
+```
+
 
 #### sharing data with `useState`
 
